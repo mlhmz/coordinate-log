@@ -1,6 +1,7 @@
 package xyz.mlhmz.mcserverinformation.coordinatelog.utils;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.bukkit.entity.Player;
 
 public class LocationUtil {
@@ -17,7 +18,7 @@ public class LocationUtil {
             return null;
         } else if (value.equals("~")) {
             return getCurrentPlayerCoordinate(player, dimension);
-        } else if (StringUtils.isNumeric(value)) {
+        } else if (NumberUtils.isCreatable(value)) {
             return Integer.parseInt(value);
         } else {
             return null;
